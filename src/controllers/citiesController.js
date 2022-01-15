@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const Category = mongoose.model('Category');
-const Product = mongoose.model('Product');
+const City = mongoose.model('City');
+const Restaurant = mongoose.model('Restaurant');
 
 // List Categories action
 exports.index = function(req, res, next) {
-  Category.find({}, function(error, objects) {
+  City.find({}, function(error, objects) {
     if(error) {
       res.status(422).send({ error: 'Unable to fetch categories '})
     } else {
@@ -13,50 +13,50 @@ exports.index = function(req, res, next) {
   })
 }
 
-// Show Category action
+// Show City action
 exports.show = function(req, res, next) {
-  Category.findOne({ _id: req.params.id })
-    .then(category => {
-      return res.status(200).send(category);
+  City.findOne({ _id: req.params.id })
+    .then(city => {
+      return res.status(200).send(city);
     })
     .catch(error => {
       return res.status(400).send({ error: 'Unable to find this resource' });
     })
 }
-// Create Category action
+// Create City action
 exports.create = function(req, res, next) {
-  const category = new Category({
+  const city = new City({
     name: req.body.name,
     isActive: req.body.isActive
   })
-  category.save(function(error, savedObject) {
+  city.save(function(error, savedObject) {
     if(error) {
-      return res.status(422).send({ message: 'Unable to save this category', error: error })
+      return res.status(422).send({ message: 'Unable to save this city', error: error })
     } else {
       return res.status(200).send(savedObject)
     }
   })
 }
 
-// Update Category action
+// Update City action
 exports.update = function(req, res, next) {
   // TODO
 }
 
-// Delete Category action
+// Delete City action
 exports.destroy = function(req, res, next) {
   // TODO
 }
 
-// Category Products
-exports.products = function(req, res, next) {
+// City Restaurants
+exports.restaurants = function(req, res, next) {
   console.log(req.params.id)
-  // Find category
-  Category.findOne({ _id: req.params.id })
-  .then(category => {
-    Product.find({ category: category }, function(error, objects) {
+  // Find city
+  City.findOne({ _id: req.params.id })
+  .then(city => {
+    Restaurant.find({ city: city }, function(error, objects) {
       if(error) {
-        res.status(422).send({ error: 'Unable to fetch products '})
+        res.status(422).send({ error: 'Unable to fetch restaurants '})
       } else {
         res.status(200).send(objects)
       }

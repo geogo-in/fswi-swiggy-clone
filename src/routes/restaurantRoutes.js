@@ -26,16 +26,16 @@ const upload = multer({
   fileFilter: fileFilter
 })
 
-const productsController = require('../controllers/productsController');
+const restaurantsController = require('../controllers/restaurantsController');
 
 module.exports = (app) => {
   app.get('/', function(req, res, next) {
-    res.send({ ping: 'FSWI Amazon Clone API' });
+    res.send({ ping: 'FSWI Swiggy Clone API' });
   });
   //adaptive practive routes 
-  app.get('/products', productsController.index);
-  app.get('/products/:id', productsController.show);
-  app.post('/products', upload.single('productImage'), productsController.create);
-  app.put('/products/:id', productsController.update);
-  app.delete('/products/:id', productsController.destroy);
+  app.get('/restaurants', restaurantsController.index);
+  app.get('/restaurants/:id', restaurantsController.show);
+  app.post('/restaurants', upload.single('restaurantImage'), restaurantsController.create);
+  app.put('/restaurants/:id', restaurantsController.update);
+  app.delete('/restaurants/:id', restaurantsController.destroy);
 }

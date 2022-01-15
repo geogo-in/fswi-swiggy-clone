@@ -15,6 +15,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - Upload category images
 
 ### Restaurant
+Cities have menu restraunts
 - [x] API for listing all Restaurant
 - [x] Create new Restaurant
 - [x] View Restaurant details
@@ -22,6 +23,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - [ ] Delete a Restaurant
 
 ### MenuItem
+Every 
 - [ ] API for listing all MenuItems
 - [ ] Create new MenuItem
 - [ ] View MenuItem details

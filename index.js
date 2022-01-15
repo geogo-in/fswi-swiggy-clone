@@ -8,7 +8,7 @@ const multer = require('multer')
 
 const keys = require('./config/keys');
 
-require('./src/models/Product');
+require('./src/models/Restaurant');
 require('./src/models/City');
 // Setup DB
 mongoose.Promise = global.Promise;

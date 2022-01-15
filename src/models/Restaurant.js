@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 // Define our model
-const productSchema = new Schema({
-  category: {
+const modelSchema = new Schema({
+  city: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
+    ref: 'City',
     required: true
   },
   name: {
@@ -16,27 +16,15 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
-  mrp: {
-    type: Number,
-    required: true
-  },
-  sellPrice: {
-    type: Number,
-    required: true
-  },
-  productImage: {
+  address: {
     type: String,
     required: true
   },
-  isPublished: {
-    type: Boolean,
-    default: true
+  restaurantImage: {
+    type: String,
+    required: true
   },
-  isPrime: {
-    type: Boolean,
-    default: true
-  },
-  currentStock: {
+  costForTwo: {
     type: Number,
     default: 0
   },
@@ -48,11 +36,9 @@ const productSchema = new Schema({
     type: Number,
     default: 0
   },
-  brandName: String,
-  sellerName: String,
-  deliveryCharge: {
-    type: Number,
-    default: 0
+  isActive: {
+    type: Boolean,
+    default: true
   },
   createdAt : { type : Date, default: Date.now },
   updatedAt : { type : Date, default: Date.now }
@@ -60,4 +46,4 @@ const productSchema = new Schema({
   usePushEach: true
 });
 
-mongoose.model('Product', productSchema);
+mongoose.model('Restaurant', modelSchema);

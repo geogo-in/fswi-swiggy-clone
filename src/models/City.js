@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 // Define our model
-const categorySchema = new Schema({
+const modelSchema = new Schema({
   name: String,
   isActive: {
     type: Boolean,
@@ -14,4 +14,4 @@ const categorySchema = new Schema({
   usePushEach: true
 });
 
-mongoose.model('Category', categorySchema);
+mongoose.model('City', modelSchema);
