@@ -30,9 +30,9 @@ const menuItemsController = require('../controllers/menuItemsController');
 
 module.exports = (app) => {
   //adaptive practive routes 
-  app.get('/menuItems', menuItemsController.index);
-  app.get('/menuItems/:id', menuItemsController.show);
-  app.post('/menuItems', upload.single('itemImage'), menuItemsController.create);
-  app.put('/menuItems/:id', menuItemsController.update);
-  app.delete('/menuItems/:id', menuItemsController.destroy);
+  app.get('/menuitems', menuItemsController.index);
+  app.get('/menuitems/:id', menuItemsController.show);
+  app.post('/menuitems', upload.single('itemImage'), menuItemsController.create);
+  app.put('/menuitems/:id', menuItemsController.update);
+  app.delete('/menuitems/:id', menuItemsController.destroy);
 }

@@ -21,6 +21,7 @@ Cities have menu restraunts
 - [x] View Restaurant details
 - [ ] Update Restaurant
 - [ ] Delete a Restaurant
+- [x] API for listing all MenuItems for a restaurant
 
 #### Scope of Development
 - Add reviews for Restaurant

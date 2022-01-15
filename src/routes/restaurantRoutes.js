@@ -38,4 +38,5 @@ module.exports = (app) => {
   app.post('/restaurants', upload.single('restaurantImage'), restaurantsController.create);
   app.put('/restaurants/:id', restaurantsController.update);
   app.delete('/restaurants/:id', restaurantsController.destroy);
+  app.get('/restaurants/:id/menuitems', restaurantsController.menuItems);
 }

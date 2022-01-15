@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const City = mongoose.model('City');
 const Restaurant = mongoose.model('Restaurant');
+const MenuItem = mongoose.model('MenuItem');
 
 // List Restaurants action
 exports.index = function(req, res, next) {
@@ -64,4 +65,31 @@ exports.update = function(req, res, next) {
 // Delete Restaurant action
 exports.destroy = function(req, res, next) {
   // TODO
+}
+
+exports.menuItems = function(req, res, next) {
+  console.log(req.params.id)
+
+  // Restaurant.findOne({ _id: req.params.id })
+  // .then(restaurant => {
+  //   return res.status(200).send(restaurant);
+  // })
+  // .catch(error => {
+  //   return res.status(400).send({ error: 'Unable to find this resource' });
+  // })
+
+  // Find restaurant
+  Restaurant.findOne({ _id: req.params.id })
+    .then(restaurant => {
+      MenuItem.find({ restaurant: restaurant }, function(error, objects) {
+        if(error) {
+          res.status(422).send({ error: 'Unable to fetch MenuItems '})
+        } else {
+          res.status(200).send(objects)
+        }
+      })  
+    })
+    .catch(error => {
+      return res.status(400).send({ error: 'Unable to find this resource' });
+    })
 }
