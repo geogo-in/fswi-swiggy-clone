@@ -22,17 +22,17 @@ Cities have menu restraunts
 - [ ] Update Restaurant
 - [ ] Delete a Restaurant
 
-### MenuItem
-Every 
-- [ ] API for listing all MenuItems
-- [ ] Create new MenuItem
-- [ ] View MenuItem details
-- [ ] Update MenuItem
-- [ ] Delete a MenuItem
-
 #### Scope of Development
 - Add reviews for Restaurant
 - Add ratings for Restaurant
+
+### MenuItem
+Every 
+- [x] API for listing all MenuItems for a restaurant
+- [x] Create new MenuItem
+- [x] View MenuItem details
+- [ ] Update MenuItem
+- [ ] Delete a MenuItem
 
 ### User
 Users can signup to this application using email and password. 

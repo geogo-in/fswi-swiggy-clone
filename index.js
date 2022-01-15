@@ -8,8 +8,9 @@ const multer = require('multer')
 
 const keys = require('./config/keys');
 
-require('./src/models/Restaurant');
 require('./src/models/City');
+require('./src/models/Restaurant');
+require('./src/models/MenuItem');
 // Setup DB
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
@@ -24,8 +25,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(multer())
 
 // Add all routes
-require('./src/routes/productRoutes')(app);
 require('./src/routes/cityRoutes')(app);
+require('./src/routes/restaurantRoutes')(app);
+require('./src/routes/menuItemRoutes')(app);
 
 // Setup Server
 const port = process.env.PORT || 8080;
